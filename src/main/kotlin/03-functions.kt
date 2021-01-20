@@ -5,14 +5,24 @@ fun getGreeting(): String {
 }
 
 // single expression function with type inference
-fun greet(greeting: String, name: String) = "$greeting $name"
+fun greet(greeting: String = "Hai", name: String) = "$greeting $name"
 
 // void function, 'Unit' can be omitted
 fun sayHello(): Unit {
     println("Halo")
 }
 
-fun main() {
+// vararg
+fun saySomethingNice(greeting: String, vararg persons: String) {
+    persons.forEach { println("$greeting $it") }
+}
 
-    println(greet(getGreeting(), "Archie"))
+fun main() {
+    // named parameter with default value on greeting
+    println(greet(name = "Archie"))
+
+    val names = arrayOf("Archie", "Angga", "Zizu")
+
+    // persons being spread over vararg
+    saySomethingNice(getGreeting(), *names)
 }
