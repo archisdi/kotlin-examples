@@ -38,7 +38,7 @@ build/
 .idea/compiler.xml
 .idea/inspectionProfiles/profiles_settings.xml
 .idea/.name
-.idea/artifacts/dist_auto_*
+.idea/artifacts/dist_auto_*git r
 .idea/artifacts/dist.xml
 .idea/artifacts/ideaPlugin.xml
 .idea/artifacts/kotlinc.xml
@@ -62,3 +62,4 @@ local.properties
 buildSrcTmp/
 distTmp/
 outTmp/
+target/

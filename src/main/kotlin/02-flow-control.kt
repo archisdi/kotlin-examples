@@ -12,15 +12,19 @@ fun main() {
     }
 
     // switch case
+    val hometown: String
     when(greeting) {
         // one liner
-        "Hola" -> println("!!!")
+        "Hola" -> hometown = "Makassar"
 
         // default with brackets
         else -> {
-            println("!")
+            hometown = "Bandung"
         }
     }
 
-    println("$greeting $name")
+    // conditional assignment
+    val hobby = if (age > 20) "Eat" else "Drink"
+
+    println("$greeting $name from $hometown that loves $hobby")
 }

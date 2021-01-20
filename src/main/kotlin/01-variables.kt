@@ -13,5 +13,6 @@ fun main() {
     // nullable variable
     val hobby: String? = null
 
+    // print with string template
     println("Hello $name of age $age from $city likes to do $hobby")
 }
