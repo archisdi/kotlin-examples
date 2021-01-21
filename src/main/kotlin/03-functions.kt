@@ -1,4 +1,3 @@
-
 // no param function
 fun getGreeting(): String {
     return "Holaa"
@@ -17,6 +16,16 @@ fun saySomethingNice(greeting: String, vararg persons: String) {
     persons.forEach { println("$greeting $it") }
 }
 
+// parameterized function
+fun printFilteredStrings(list: List<String>, filters: (String) -> Boolean){
+    list.filter(filters).forEach { println(it) }
+}
+
+// store function as variable
+val below4: (s: String) -> Boolean = {
+    it.length >= 4
+}
+
 fun main() {
     // named parameter with default value on greeting
     println(greet(name = "Archie"))
@@ -25,4 +34,15 @@ fun main() {
 
     // persons being spread over vararg
     saySomethingNice(getGreeting(), *names)
+
+    // HIGHER ORDER FUNCTION BELOW
+    val languages = listOf("Kotlin", "Java", "Go", "Js")
+
+    // direct statement if last param is function
+    printFilteredStrings(languages) {
+        s: String -> s.length > 2
+    }
+
+    // pass var function
+    printFilteredStrings(languages, below4)
 }
